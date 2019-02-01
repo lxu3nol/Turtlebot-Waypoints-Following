@@ -1,0 +1,6 @@
+<launch>
+  <rosparam param="p_seq">[2.0, 0.0, 0.0, 0.0, -2.0, 0.0, -2.0, 0.0, 0.0, 0.0, 2.0, 0.0]</rosparam>
+  <!-- <rosparam param="p_seq">[3.0, -4.0, 0.0, -3.0, -4.0, 0.0, -2.0, 3.0, 0.0, 3.0, 1.0, 0.0]</rosparam> -->
+  <node pkg="waypoints_following" type="time_stamp.py" respawn="false" name="goals" output="screen" />
+  <node pkg="waypoints_following" type="dynamic_waypoints_3.py" respawn="true" name="waypoints" output="screen" />
+</launch>

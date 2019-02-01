@@ -1,0 +1,7 @@
+<!--
+  Used for visualising the turtlebot while building a map or navigating with the ros navistack.
+ -->
+<launch>
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find waypoints_following)/rviz/navigation_multiple.rviz"/>
+  <!-- <node name="rviz" pkg="rviz" type="rviz" args="-d $(find waypoints_following)/rviz/multi_robot_1.rviz"/> -->
+</launch>

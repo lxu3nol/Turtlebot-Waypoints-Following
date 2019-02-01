@@ -1,0 +1,25 @@
+<launch>
+  <arg name="world" default="random_world"/>
+
+  <!-- Start World With Single Turtlebot -->
+  <!-- <include file="$(find turtlebot_gazebo)/launch/turtlebot_world.launch">
+    <arg name="world_file" value="$(find waypoints_following)/config/$(arg world).world"/>
+  </include> -->
+
+  <!-- Start World With Multiple Turtlebot -->
+  <include file="$(find waypoints_following)/launch/multiple_turtlebot_world.launch">
+    <arg name="world_file" value="$(find waypoints_following)/config/$(arg world).world"/>
+    <arg name="map_file" value="$(find waypoints_following)/config/$(arg world).yaml"/>
+  </include>
+
+  <!-- Uncommented If Running With Single Turtlebot -->
+  <!-- <include file="$(find turtlebot_gazebo)/launch/amcl_demo.launch">
+    <arg name="map_file" value="$(find waypoints_following)/config/$(arg world).yaml"/>
+  </include> -->
+
+  <!-- RViz For Single Turtlebot -->
+  <!-- <include file="$(find turtlebot_rviz_launchers)/launch/view_navigation.launch"/> -->
+
+  <!-- RViz For Multiple Turtlebot -->
+  <include file="$(find waypoints_following)/launch/view_navigation.launch"/>
+</launch>

@@ -1,0 +1,19 @@
+<launch>
+  <!-- BEGIN ROBOT 1 -->
+  <group ns="turtlebot1">
+    <param name="robot_id" value="1" />
+    <rosparam param="p_seq">[2.0, 0.0, 0.0, 0.0, -2.0, 0.0, -2.0, 0.0, 0.0, 0.0, 2.0, 0.0]</rosparam>
+    <node pkg="waypoints_following" type="multiagent_time_stamp.py" respawn="false" name="goals" output="screen" />
+    <node pkg="waypoints_following" type="multiagent_waypoints.py" respawn="true" name="waypoints" output="screen" />
+  </group>
+  <!-- END ROBOT 1 -->
+
+  <!-- BEGIN ROBOT 2 -->
+  <group ns="turtlebot2">
+    <param name="robot_id" value="2" />
+    <rosparam param="p_seq">[-2.0, 2.0, 0.0, 3.0, -2.0, 0.0, 3.0, 2.0, 0.0, -2.0, -2.0, 0.0]</rosparam>
+    <node pkg="waypoints_following" type="multiagent_time_stamp.py" respawn="false" name="goals" output="screen" />
+    <node pkg="waypoints_following" type="multiagent_waypoints.py" respawn="true" name="waypoints" output="screen" />
+  </group>
+  <!-- END ROBOT 2 -->
+</launch>
